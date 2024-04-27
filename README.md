@@ -13,4 +13,4 @@ Lombok<br>
 Webjars (Bootstrap)<br>
 Thymeleaf<br>
 Thymeleaf Layout Dialect <br>
-Bean Validation
+Spring Boot Validation

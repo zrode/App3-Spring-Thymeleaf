@@ -24,7 +24,7 @@
                 <table class="table">
                     <thead class="table-secondary">
                     <tr>
-                        <td>ID</td> <td>Nom</td> <td>Prénom</td> <td>Date_de_naissance</td> <td>Score</td> <td>Malade</td> <td></td>
+                        <td>ID</td> <td>Nom</td> <td>Prénom</td> <td>Date_de_naissance</td> <td>Score</td> <td>Malade</td> <td></td> <td></td>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,6 +38,11 @@
                         <td>
                             <a class="btn btn-danger" th:href="@{deletePatient(id=${p.id}, keyword=${keyword}, page=${currentPage})}" onclick="return confirm('Êtes-vous sûr?')">
                                 <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a class="btn btn-success" th:href="@{/editPatient(id=${p.id})}">
+                                <i class="bi bi-pencil"></i>
                             </a>
                         </td>
                     </tr>

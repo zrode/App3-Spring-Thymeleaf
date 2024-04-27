@@ -39,6 +39,13 @@ public class PatientController {
         return "redirect:/index?page="+page+"&keyword="+keyword;
     }
 
+    @GetMapping("/editPatient")
+    public String editPatient(Model model, @RequestParam(name = "id") Long id) {
+        Patient patient = patientRepo.findById(id).get(); // on ajoute .get() pour récupérer le patient
+        model.addAttribute("patient", patient);
+        return "editPatient";
+    }
+
     @GetMapping("/formPatient")
     public String formPatient(Model model) {
         model.addAttribute("patient", new Patient());
@@ -53,4 +60,5 @@ public class PatientController {
         patientRepo.save(patient);
         return "redirect:/index";
     }
+
 }
