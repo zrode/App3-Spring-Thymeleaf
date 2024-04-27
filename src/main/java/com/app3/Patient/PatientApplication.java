@@ -20,10 +20,10 @@ public class PatientApplication {
 	@Bean
 	public CommandLineRunner start(PatientRepo patientRepo) {
 		return args -> {
-			patientRepo.save(new Patient(null, "Dupont", "Toto", new Date(), 11, false));
-			patientRepo.save(Patient.builder().nom("Durand").prenom("Titi").build());
-			patientRepo.save(Patient.builder().nom("Zidane").prenom("Zizou").build());
-			patientRepo.save(Patient.builder().nom("Rinner").prenom("Tedy").build());
+			patientRepo.save(new Patient(null, "Dupont", "Toto", new Date(), 111, false));
+			patientRepo.save(Patient.builder().nom("Durand").prenom("Titi").score(125).build());
+			patientRepo.save(Patient.builder().nom("Zidane").prenom("Zizou").score(154).build());
+			patientRepo.save(Patient.builder().nom("Rinner").prenom("Tedy").score(144).build());
 
 			List<Patient> patients = patientRepo.findAll();
 			patients.forEach(patient -> System.out.println(patient.toString()));
