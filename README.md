@@ -19,4 +19,4 @@ MAJ -> tyhmeleaf-extras-springsecurity6 (pour la sécu côté front vu qu'on uti
 
 MAJ : J'ai ajouté une couche sécurité.
 J'ai donc ajouté une classe SecurityConfig dans laquelle j'ai déclaré 2 beans (1 pour la stratégie d'authentification et 1 filtre)
-Concernant la stratégie d'authentification, j'ai exposé les 2 cas possibles d'où les 2 méthodes dans SecurityConfig
+Concernant la stratégie d'authentification, j'ai exposé 2 cas possibles d'où les 2 méthodes dans SecurityConfig
