@@ -33,26 +33,26 @@ public class PatientController {
         return "patients";
     }
 
-    @GetMapping("/deletePatient")
+    @GetMapping("/admin/deletePatient")
     public String delete(@RequestParam(name = "id") Long idPatient, String keyword, int page) {
         patientRepo.deleteById(idPatient);
         return "redirect:/index?page="+page+"&keyword="+keyword;
     }
 
-    @GetMapping("/editPatient")
+    @GetMapping("/admin/editPatient")
     public String editPatient(Model model, @RequestParam(name = "id") Long id) {
         Patient patient = patientRepo.findById(id).get(); // on ajoute .get() pour récupérer le patient
         model.addAttribute("patient", patient);
         return "editPatient";
     }
 
-    @GetMapping("/formPatient")
+    @GetMapping("/admin/formPatient")
     public String formPatient(Model model) {
         model.addAttribute("patient", new Patient());
         return "formPatient";
     }
 
-    @PostMapping("/savePatient")
+    @PostMapping("/admin/savePatient")
     public String savePatient(@Valid Patient patient, BindingResult br) {
         if(br.hasErrors()) {
             return "formPatient";
